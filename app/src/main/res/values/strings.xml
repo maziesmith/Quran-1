@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quran</string>
+    <string name="SuraID">SuraID</string>
+    <string name="description">File downloading</string>
+</resources>

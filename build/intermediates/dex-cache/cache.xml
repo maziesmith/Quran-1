@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\ff71d075ba6f4784e1939e815f9a7276cd12b7a2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_88eb20aa853735da09a091732146845a57608cc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\5201409396e9112d3f53643b0912e4ac3382027f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_7fe9f98d65e552f6781b8d2e763993aed00c9b84.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\projects\Quran\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="450d2a4f6e200c270bf9c029f205bbbee256bd16">
+        <dex dex="E:\projects\Quran\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_124ab9d32b6e7ab9ddb67541705509ac3e482415\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\a7565e8cb1742f2a917bab23a03d37d539db1415\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8cec50fc9cc847bad0d6ed7d93814f4b34744521">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_b89f727995142829d7f939fc469ead3e42ebdadc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.20.0\1d086ac5756475ddf451af2e2df6e288d18608ca\google-oauth-client-1.20.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1d086ac5756475ddf451af2e2df6e288d18608ca">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\google-oauth-client-1.20.0_a72cbe789fcd260471354648de568997dd38b41b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.20.0\d3e66209ae9e749b2d6833761e7885f60f285564\google-api-client-1.20.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d3e66209ae9e749b2d6833761e7885f60f285564">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\google-api-client-1.20.0_1f9e7a8521816d217f90604825e242db750d1cce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.20.0\2408070b2abec043624d35b35e30450f1b663858\google-http-client-jackson2-1.20.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2408070b2abec043624d35b35e30450f1b663858">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.20.0_10e76ba7da43c98bd372380b133f813d82b613da.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\b669996f43aedcbf78e383df88f0e4fc32b8a1b6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7e947f993bf32a00fcb3078cdda8bb11c930afb">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_62dd76253a12c9b11f8cc3e65cef7a4cd66a0d28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\13.0\381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7\guava-jdk5-13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="381ae6c8add7c98e9bcddb1e0b898400cd6fc3f7">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\guava-jdk5-13.0_949e8ec1b68baafecd857e0eca640aa0f4ba30b1.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\projects\Quran\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="E:\projects\Quran\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4c23773e677ad1d80ddc93836eba2db529450150\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\c51f2fd1b36b5d29966bc8bbc061dca160556ef0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_32533c9532c10cc3d6ac33cd8f765cce9afefd66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\f746ca3698f7dc800d97cf9d149abaed7a511da1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_10a1815e5a6c9ea29171ffb4c57eaacb50a53668.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Users\nima\AppData\Local\Android\sdk1\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha7\constraint-layout-solver-1.0.0-alpha7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="439eeb5ffd54cbd18db0a6aea471e8356f19fc36">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.0-alpha7_8fed9f72406af3758a0bcf6db456d9ade8c844d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\Users\nima\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_b79d409052c20ab5f2dbdc7d940827e698fcbfca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\55d0d7218ac975ae3f81f3bf1d419283620ad0dd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_84edd91eb9e6ec99f15c245cc87caa81f2bae629.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\3e55e8572c9d4445268c6fd1a4133151859b49de\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_4815be178645e4bd7217461acd992e59131ee29b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\787dddd428173ff93f5bfcc6d93f07e44165c948\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_a70ced5c2e196b1768c452f81f2b302ef7a28a7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\4617bf6e491a61ffe107144a5702ececbc74ac8b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_2c7e4b03f5dd414682e60ff9448ca978ebd0b5e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.readystatesoftware.sqliteasset\sqliteassethelper\2.0.1\d5f02e4a4d65ec0fbb339f2e4228723d1540bb9f\sqliteassethelper-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d5f02e4a4d65ec0fbb339f2e4228723d1540bb9f">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\sqliteassethelper-2.0.1_22977dfa830390979eda9c84747cf452d321d435.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\877d2bc3709d3308a649264d14586d02a2f7430c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_98c310cba4ba01126f89c0fe83cfaed4d9859f6b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\cb59ba72d788932e458ab31279d8a0241c86c471\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="547e803ef2c308fa678c4ed942a76c387e66a352">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_8184e4cbb8dbb65e03ceadc203302d231d26e9c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\library-2.4.0_a0f9b1d70ea0cfd3331d065c25bbd9eadf38b21b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\0cf40cd41d187e29d86476fe979dceb809b48402\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_3a32952546e78ab15ab76006fa58e6347fc89c11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\jsr305-1.3.9_2ebf0566f3edfbe742e5b251afb17b2dc1f334b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.1.3\f6c3aed1cdfa21b5c1737c915186ea93a95a58bd\jackson-core-2.1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\jackson-core-2.1.3_3c426b10d7100f594009308e63803b135e9b6a31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.20.0\93d82db2bca534960253f43424b2ba9d7638b4d2\google-http-client-1.20.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93d82db2bca534960253f43424b2ba9d7638b4d2">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\google-http-client-1.20.0_c397ff3021b3d58511bc92a40d323a3ab1594a5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\07984bfb7e2c700db94cfb8854924eb719ae4319\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="541a2ad68dc68aa49795821f8280b7624e6a0c9b">
+        <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_cbc2f1ecab78d01e87baf23f6d4b5a230c75666f.jar" />
+    </item>
+
+</items>
