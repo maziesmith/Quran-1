@@ -46,12 +46,12 @@ public class MainActivity extends ListActivity {
         setListAdapter(listview);
 
 
-        //  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        //   if (true)
-        requestPermissions(
-                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                1);
-
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+             //   if (true)
+             requestPermissions(
+                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                     1);
+         }
 
 
 
