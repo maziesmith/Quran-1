@@ -20,7 +20,7 @@ public class DownloadRequest {
     private DownloadRequest() {
     }
 
-    private DownloadRequest(String uri, File folder, CharSequence name, CharSequence description, boolean scannable) {
+    public DownloadRequest(String uri, File folder, CharSequence name, CharSequence description, boolean scannable) {
         this.mUri = uri;
         this.mFolder = folder;
         this.mName = name;

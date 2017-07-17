@@ -2,6 +2,8 @@ package com.moradi.nima.quran.download;
 
 import android.util.Log;
 
+import com.moradi.nima.quran.Adpter.SuraData;
+
 /**
  * Created by nima on 7/14/2017.
  */
@@ -15,11 +17,30 @@ public class LinkCreator {
     private int currentPos = 1;
 
 
-    public LinkCreator(String Singer, String quality, String provider, int SuraNumber) {
-        singer = Singer;
-        this.quality = quality;
-        this.provider = provider;
+    private boolean autoIncPos=true;
 
+
+    public void setAutoIncPos(boolean auto){autoIncPos=auto;}
+    public boolean getAutoIncPos(){return autoIncPos;}
+
+
+    public LinkCreator(String Singer, String quality, String provider, int SuraNumber) {
+
+        this.provider = provider;
+        this.singer = Singer;
+        this.quality = quality;
+
+        if (SuraNumber < 100) {
+            if (SuraNumber < 10)
+                SuraNumberS = "00" + SuraNumber;
+            else
+                SuraNumberS = "0" + SuraNumber;
+        } else SuraNumberS = SuraNumber + "";
+    }
+
+    public LinkCreator(String Singer, String quality, int SuraNumber) {
+        this.singer = Singer;
+        this.quality = quality;
 
         if (SuraNumber < 100) {
             if (SuraNumber < 10)
@@ -29,14 +50,6 @@ public class LinkCreator {
         } else SuraNumberS = SuraNumber + "";
 
 
-    }
-
-    public LinkCreator(String Singer, String quality, int SuraNumber) {
-        singer = Singer;
-        this.quality = quality;
-
-
-
 
     }
 
@@ -44,8 +57,9 @@ public class LinkCreator {
         return currentPos;
     }
 
+
     public void setCurrentPos(int pos) {
-        if (pos > 0)
+
             currentPos = pos;
 
 
@@ -56,7 +70,7 @@ public class LinkCreator {
 
     }
 
-    private String getLinkNumber() {
+    public String fileNamer() {
         String temp;
         if (currentPos < 100) {
             if (currentPos < 10)
@@ -64,7 +78,7 @@ public class LinkCreator {
             else
                 temp = "0" + currentPos;
         } else temp = currentPos + "";
-        return SuraNumberS + temp;
+        return SuraNumberS + temp+".mp3";
 
 
     }
@@ -75,13 +89,30 @@ public class LinkCreator {
         link .append (singer + "_" + quality);
         if (provider != null)
             link .append("_"+provider);
-        link.append("/"+getLinkNumber()+".mp3");
+        link.append("/"+fileNamer());
+        if(autoIncPos)
         currentPos++;
         Log.i("link maker",link.toString());
         return link.toString();
 
     }
-    //http://www.everyayah.com/data/Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net/004001.mp3
+    public String pathMaker(int i){
+        return android.os.Environment.getExternalStorageDirectory() +
+                "/Quarn/audio/"+singer+"/"+quality+"/"+fileNamer(i);
+    }
+
+    public String fileNamer(int currentPos) {
+        String temp;
+        if (currentPos < 100) {
+            if (currentPos < 10)
+                temp = "00" + currentPos;
+            else
+                temp = "0" + currentPos;
+        } else temp = currentPos + "";
+        return SuraNumberS + temp+".mp3";
+
+
+    }
 
 
 }

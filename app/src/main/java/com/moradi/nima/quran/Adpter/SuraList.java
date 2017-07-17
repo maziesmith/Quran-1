@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.moradi.nima.quran.DatabaseAccess;
 import com.moradi.nima.quran.R;
-import com.moradi.nima.quran.test;
+import com.moradi.nima.quran.test1;
 
 import java.util.List;
 
@@ -64,7 +64,7 @@ public class SuraList extends ArrayAdapter<SuraData> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(getContext(),test.class);
+                Intent intent =new Intent(getContext(),test1.class);
                 intent.putExtra(getContext().getString(R.string.SuraID),getItem(position).getSuraID());
                 getContext().startActivity(intent);
 

@@ -19,6 +19,7 @@ import android.widget.VideoView;
 import com.example.jean.jcplayer.JcAudio;
 import com.example.jean.jcplayer.JcPlayerView;
 import com.moradi.nima.quran.Adpter.SuraTextData;
+import com.moradi.nima.quran.download.DownloadHelper;
 import com.moradi.nima.quran.download.LinkCreator;
 
 import java.net.URL;
@@ -53,18 +54,15 @@ public class test1 extends AppCompatActivity {
 
 
         player = (JcPlayerView) findViewById(R.id.jcplayer);
-
-        LinkCreator linky = new LinkCreator("AbdulSamad", "64kbps", "QuranExplorer.Com", pos);
-        for (int i = 0; i < 286; i++) {
-
-            player.addAudio(JcAudio.createFromURL("ayah: "+(i+1),linky.getLink()));
-
-        }
+        DownloadHelper helper=new DownloadHelper("Quarn/audio/AbdulSamad/64kbps/",this,pos
+                ,"AbdulSamad","64kbps","QuranExplorer.Com",list.size());
+        helper.addToDownload();
 
 
-        for (int i = 0; i < 8; i++)
-            player.addAudio(JcAudio.createFromFilePath(android.os.Environment.getExternalStorageDirectory() +
-                    "/Quarn/audio/AbdulSamad/64kbps/00200" + i + ".mp3"));
+LinkCreator linky=new LinkCreator("AbdulSamad","64kbps",pos);
+
+        for (int i = 1; i <=list.size(); i++)
+            player.addAudio(JcAudio.createFromFilePath(linky.pathMaker(i)));
 
     }
 

@@ -59,7 +59,7 @@ public class DownloadManager implements Downloader.OnDownloaderDestroyedListener
     /**
      * private construction
      */
-    private DownloadManager() {
+    public DownloadManager() {
         mDownloaderMap = new LinkedHashMap<String, Downloader>();
     }
 
