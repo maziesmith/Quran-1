@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class test extends AppCompatActivity {
+public class test1 extends AppCompatActivity {
     JcPlayerView player;
 
     @Override
@@ -38,14 +38,14 @@ public class test extends AppCompatActivity {
         DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
         databaseAccess.open();
 //
-        int pos=getIntent().getExtras().getInt(getString(R.string.SuraID));
-        SuraTextData suraTextData=databaseAccess.getSuraText(pos);
+        int pos = getIntent().getExtras().getInt(getString(R.string.SuraID));
+        SuraTextData suraTextData = databaseAccess.getSuraText(pos);
         List<String> list = suraTextData.getAyah();
-ayah.append(list.get(0).replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ","بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\n"));
-       for(int i=1;i<list.size();i++)
-       {
-           ayah.append(list.get(i));
-       }
+        ayah.append(list.get(0).replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\n"));
+
+        for (int i = 1; i < list.size(); i++) {
+            ayah.append(list.get(i));
+        }
         TextView text = (TextView) findViewById(R.id.Sura_text);
         text.setText(ayah);
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Al Qalam Quran.ttf");
@@ -54,20 +54,19 @@ ayah.append(list.get(0).replace("بِسْمِ اللَّهِ الرَّحْمَ�
 
         player = (JcPlayerView) findViewById(R.id.jcplayer);
 
-//        LinkCreator linky = new LinkCreator("AbdulSamad", "64kbps", "QuranExplorer.Com", pos);
-//        for (int i = 0; i < 286; i++) {
-//
-//            player.addAudio(JcAudio.createFromURL("ayah: "+(i+1),linky.getLink()));
-//
-//        }
-//        jcplayerView.3
+        LinkCreator linky = new LinkCreator("AbdulSamad", "64kbps", "QuranExplorer.Com", pos);
+        for (int i = 0; i < 286; i++) {
 
-for(int i=0;i<8;i++)
-player.addAudio(JcAudio.createFromFilePath(android.os.Environment.getExternalStorageDirectory() +
-        "/Quarn/audio/AbdulSamad/64kbps/00200"+i+".mp3"));
+            player.addAudio(JcAudio.createFromURL("ayah: "+(i+1),linky.getLink()));
+
+        }
+
+
+        for (int i = 0; i < 8; i++)
+            player.addAudio(JcAudio.createFromFilePath(android.os.Environment.getExternalStorageDirectory() +
+                    "/Quarn/audio/AbdulSamad/64kbps/00200" + i + ".mp3"));
 
     }
-
 
 
     @Override
