@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<TextView
-    android:id="@+id/sura_id"
-    android:layout_width="0dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_weight="0.8"
-android:text="sura id"
-    />
-    <TextView
-        android:id="@+id/sura_name"
+    android:layoutDirection="rtl"
+
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/voice_avilable"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="4"
-        android:text="sura name"
-        />
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1.5"
+        android:src="@drawable/ic_download" />
+
+
     <TextView
         android:id="@+id/nozal"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:layout_weight="0.8"
+        android:maxLines="1"
         android:text="nozal"
-        />
+        android:textSize="15sp" />
+
     <TextView
         android:id="@+id/verse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:text="verse"
-        />
-    <ImageView
-        android:id="@+id/voice_avilable"
+        android:textSize="@dimen/text_sizeList" />
 
+    <TextView
+        android:id="@+id/sura_name"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        />
+        android:layout_margin="10dp"
+        android:layout_weight="2.5"
+        android:text="sura name"
+        android:textSize="@dimen/text_sizeList" />
 
-
+    <TextView
+        android:id="@+id/sura_id"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="0.8"
+        android:text="sura id"
+        android:textSize="15sp" />
 
 </LinearLayout>

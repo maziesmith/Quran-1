@@ -2,17 +2,15 @@ package com.moradi.nima.quran.Adpter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.LayoutRes;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.moradi.nima.quran.DatabaseAccess;
 import com.moradi.nima.quran.R;
@@ -26,6 +24,7 @@ import java.util.List;
 
 public class SuraList extends ArrayAdapter<SuraData> {
     DatabaseAccess databaseAccess;
+    Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(), "fonts/UthmanTN1 Ver10.otf");
 
     public SuraList(@NonNull Context context, List<SuraData> Sura, DatabaseAccess databaseAccess) {
 
@@ -35,7 +34,6 @@ public class SuraList extends ArrayAdapter<SuraData> {
 
     }
 
-
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
@@ -44,6 +42,7 @@ public class SuraList extends ArrayAdapter<SuraData> {
             convertView = inflater.inflate(R.layout.sura_list, parent, false);
             TextView textView1 = (TextView) convertView.findViewById(R.id.sura_id);
             TextView textView2 = (TextView) convertView.findViewById(R.id.sura_name);
+            textView2.setTypeface(typeFace);
             TextView textView3 = (TextView) convertView.findViewById(R.id.nozal);
             TextView textView4 = (TextView) convertView.findViewById(R.id.verse);
 
@@ -65,7 +64,10 @@ public class SuraList extends ArrayAdapter<SuraData> {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(getContext(),test1.class);
+                intent.putExtra("SuraName", ((TextView) v.findViewById(R.id.sura_name)).getText());
                 intent.putExtra(getContext().getString(R.string.SuraID),getItem(position).getSuraID());
+                intent.putExtra("SuraLength", ((TextView) v.findViewById(R.id.verse)).getText());
+
                 getContext().startActivity(intent);
 
 
