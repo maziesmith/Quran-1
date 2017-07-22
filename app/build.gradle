@@ -29,13 +29,15 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile 'com.google.api-client:google-api-client:1.20.0'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
-    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
-    testCompile 'junit:junit:4.12'
-//ex player
-    compile 'io.github.jeancsanchez.jcplayer:jcplayer:2.6.0-alpha'
-//
+    //ex player
+    //
 
-    }
+    //compile 'com.google.api-client:google-api-client:1.20.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //  compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    compile 'io.github.jeancsanchez.jcplayer:jcplayer:2.6.0-alpha'
+    //compile "com.android.support:support-core-utils:25.4.0"
+    compile 'com.android.support:support-v4:25.3.1'
+    testCompile 'junit:junit:4.12'
+}

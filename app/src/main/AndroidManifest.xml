@@ -27,6 +27,10 @@
             android:name=".test1"
             android:supportsRtl="false"
             android:theme="@style/QuarnReadingTheme"></activity>
+        <activity
+            android:name=".fragment.DownloadTask"
+            android:supportsRtl="false"
+            android:theme="@style/QuarnReadingTheme"></activity>
     </application>
 
 </manifest>

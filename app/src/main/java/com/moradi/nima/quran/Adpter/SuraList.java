@@ -22,7 +22,7 @@ import java.util.List;
  * Created by nima on 6/28/2017.
  */
 
-public class SuraList extends ArrayAdapter<SuraData> {
+public abstract class SuraList extends ArrayAdapter<SuraData> {
     DatabaseAccess databaseAccess;
     Typeface typeFace = Typeface.createFromAsset(getContext().getAssets(), "fonts/UthmanTN1 Ver10.otf");
 
@@ -59,7 +59,12 @@ public class SuraList extends ArrayAdapter<SuraData> {
         TextView textView3 = viewHolder.getTextView3();
         TextView textView4 = viewHolder.getTextView4();
         ImageView imageView = viewHolder.getImageView();
-
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OnClick(v);
+            }
+        });
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +93,8 @@ public class SuraList extends ArrayAdapter<SuraData> {
 
         return convertView;
     }
+
+    public abstract void OnClick(View view);
 
     private class ViewHolder {
         private TextView textView1;

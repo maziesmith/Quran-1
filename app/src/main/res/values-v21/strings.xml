@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancel">cancel</string>
+    <string name="strat_download">strat download</string>
+    <string name="quality">Quality</string>
+</resources>

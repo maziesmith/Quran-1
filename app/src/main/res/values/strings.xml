@@ -2,4 +2,10 @@
     <string name="app_name">Quran</string>
     <string name="SuraID">SuraID</string>
     <string name="description">File downloading</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cancel">cancel</string>
+    <string name="strat_download">strat download</string>
+    <string name="quality">Quality</string>
 </resources>

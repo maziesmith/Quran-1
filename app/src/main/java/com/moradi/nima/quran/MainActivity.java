@@ -3,27 +3,18 @@ package com.moradi.nima.quran;
 
 import android.Manifest;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-
 import android.os.Build;
-
-import android.support.annotation.RequiresApi;
-
 import android.os.Bundle;
-import android.util.Log;
+import android.support.annotation.RequiresApi;
+import android.view.View;
 import android.widget.Toast;
 
-import com.aspsine.multithreaddownload.CallBack;
-import com.aspsine.multithreaddownload.DownloadConfiguration;
-import com.aspsine.multithreaddownload.DownloadException;
-import com.aspsine.multithreaddownload.DownloadManager;
-import com.aspsine.multithreaddownload.DownloadRequest;
 import com.moradi.nima.quran.Adpter.SuraData;
 import com.moradi.nima.quran.Adpter.SuraList;
-import com.moradi.nima.quran.download.DownloadHelper;
+import com.moradi.nima.quran.fragment.DownloadTask;
 
-
-import java.io.File;
 import java.util.List;
 
 
@@ -42,7 +33,15 @@ public class MainActivity extends ListActivity {
         List<SuraData> Sura = databaseAccess.getSurah();
         databaseAccess.close();
 
-        SuraList listview = new SuraList(this, Sura, databaseAccess);
+        SuraList listview = new SuraList(this, Sura, databaseAccess) {
+            @Override
+            public void OnClick(View view) {
+
+
+                Intent intent = new Intent(MainActivity.this, DownloadTask.class);
+                startActivity(intent);
+            }
+        };
         setListAdapter(listview);
 
 
