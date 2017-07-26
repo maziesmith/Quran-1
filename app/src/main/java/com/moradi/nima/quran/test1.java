@@ -93,6 +93,7 @@ public class test1 extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
         player.kill();
     }
 

@@ -174,6 +174,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\14d4a3df9d926ebc7dbe141cfef8fcd392dd3aa0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="E:\projects\Quran2\app\build\intermediates\pre-dexed\debug\classes_0b17b96edd79d52c022b7f55264fe60f77be6e4f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\cae452e5b6320a7f50bef4f2ffc725f62139dc78\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="E:\projects\Quran2\app\build\intermediates\pre-dexed\debug\classes_50d41ada8d789a0507b0cc4e4e8de797a1e9309c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\nima\.android\build-cache\cb59ba72d788932e458ab31279d8a0241c86c471\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -243,6 +261,15 @@
         revision="25.0.3"
         sha1="541a2ad68dc68aa49795821f8280b7624e6a0c9b">
         <dex dex="E:\projects\Quran\app\build\intermediates\pre-dexed\debug\classes_cbc2f1ecab78d01e87baf23f6d4b5a230c75666f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\nima\.android\build-cache\c5dc46d68dd02cf09316c43d7fef0191277e2959\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="E:\projects\Quran2\app\build\intermediates\pre-dexed\debug\classes_1b99f5d8b698585ce052fc7dd2d0a6c6dc8990d4.jar" />
     </item>
 
 </items>
