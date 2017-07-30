@@ -8,7 +8,9 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moradi.nima.quran.Adpter.SuraData;
@@ -35,29 +37,29 @@ public class MainActivity extends ListActivity {
 
         SuraList listview = new SuraList(this, Sura, databaseAccess) {
             @Override
-            public void OnClick(View view) {
-
-
+            public void OnClick(View v) {
+                v = (View) v.getParent();
                 Intent intent = new Intent(MainActivity.this, DownloadTask.class);
+
+                intent.putExtra("SuraName", ((TextView) v.findViewById(R.id.sura_name)).getText().toString());
+                intent.putExtra(getContext().getString(R.string.SuraID), ((TextView) v.findViewById(R.id.sura_id)).getText().toString());
+                intent.putExtra("SuraLength", ((TextView) v.findViewById(R.id.verse)).getText().toString());
+                Log.i(this + " SuraLength: ", ((TextView) v.findViewById(R.id.verse)).getText() + "");
                 startActivity(intent);
             }
         };
         setListAdapter(listview);
 
 
-         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-             //   if (true)
-             requestPermissions(
-                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                     1);
-         }
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            //   if (true)
+            requestPermissions(
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    1);
+        }
 
 
     }
-
-
-
 
 
     public void onRequestPermissionsResult(int requestCode,
@@ -87,8 +89,6 @@ public class MainActivity extends ListActivity {
             // permissions this app might request
         }
     }
-
-
 
 
 }

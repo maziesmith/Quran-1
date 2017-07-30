@@ -33,6 +33,7 @@ public class DownloadRequest {
         String quality = link.substring(link.lastIndexOf('_'), link.lastIndexOf('/'));// _128kbps _provider
         if (!quality.contains("kbps")) {
             link=link.replace(quality,"");
+
             quality = link.substring(link.lastIndexOf('_'), link.lastIndexOf('/'));// /128kbps
 
         }

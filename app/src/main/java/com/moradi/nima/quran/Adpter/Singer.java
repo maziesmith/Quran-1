@@ -16,6 +16,7 @@ public class Singer {
     public Singer(String singer, String provider, JSONArray quality) throws JSONException {
         this.singer = singer;
         this.provider = provider;
+        Quality = new String[quality.length()];
         for (int i = 0; i < quality.length(); i++) {
             this.Quality[i] = quality.get(i).toString();
         }
@@ -56,6 +57,18 @@ public class Singer {
         return Quality;
     }
 
+    public void setQuality(JSONArray quality) {
+        Quality = new String[quality.length()];
+        for (int i = 0; i < quality.length(); i++) {
+            try {
+
+                this.Quality[i] = quality.getString(i);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public void setQuality(String quality) {
         Quality = new String[1];
         this.Quality[0] = quality;
@@ -77,16 +90,5 @@ public class Singer {
         this.progrss = a + "/" + b;
 
 
-    }
-
-    public void setQuality(JSONArray quality) {
-        for (int i = 0; i < quality.length(); i++) {
-            try {
-
-                this.Quality[i] = quality.getJSONObject(i).toString();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }

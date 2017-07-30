@@ -69,9 +69,9 @@ public abstract class SuraList extends ArrayAdapter<SuraData> {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(getContext(),test1.class);
-                intent.putExtra("SuraName", ((TextView) v.findViewById(R.id.sura_name)).getText());
+                intent.putExtra("SuraName", ((TextView) v.findViewById(R.id.sura_name)).getText().toString());
                 intent.putExtra(getContext().getString(R.string.SuraID),getItem(position).getSuraID());
-                intent.putExtra("SuraLength", ((TextView) v.findViewById(R.id.verse)).getText());
+                intent.putExtra("SuraLength", ((TextView) v.findViewById(R.id.verse)).getText().toString());
 
                 getContext().startActivity(intent);
 

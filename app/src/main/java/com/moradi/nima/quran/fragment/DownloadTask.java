@@ -29,6 +29,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class DownloadTask extends AppCompatActivity {
+    private String SuraLength;
     private List<com.moradi.nima.quran.Adpter.Singer> SingerList = new ArrayList<>();
     private RecyclerView recyclerView;
     private SingerAdapter mAdapter;
@@ -38,10 +39,13 @@ public class DownloadTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.downloadtask);
 
-
+        SuraLength = getIntent().getExtras().getString("SuraLength");
+        int suraId = Integer.parseInt(getIntent().getExtras().getString(this.getString(R.string.SuraID)));
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        mAdapter = new SingerAdapter(SingerList);
+        Log.i(this + " SuraLength: ", SuraLength);
+
+        mAdapter = new SingerAdapter(SingerList, this, Integer.parseInt(SuraLength), suraId, recyclerView);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         SnapHelper snapHelper = new PagerSnapHelper();
@@ -81,8 +85,8 @@ public class DownloadTask extends AppCompatActivity {
         try {
 
 
-            for (int i = 1; i < 6; i++) {
-                JSONObject obj = new JSONObject();
+            for (int i = 1; i < 8; i++) {
+                JSONObject obj;
                 obj = new JSONObject(loadJSONFromAsset(i + ""));//singers
                 obj = obj.getJSONObject("Singer");
 
@@ -90,6 +94,7 @@ public class DownloadTask extends AppCompatActivity {
                 singer.setSinger(obj.getString("name"));
                 singer.setProvider(obj.getString("provider"));
                 singer.setQuality(obj.getJSONArray("Quality"));
+                singer.setProgrss(0 + "/" + SuraLength);
                 this.SingerList.add(singer);
                 Log.i("test" + i, singer.getSinger() + singer.getProvider() + singer.getQuality());
             }

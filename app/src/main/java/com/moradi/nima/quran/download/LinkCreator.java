@@ -2,8 +2,6 @@ package com.moradi.nima.quran.download;
 
 import android.util.Log;
 
-import com.moradi.nima.quran.Adpter.SuraData;
-
 /**
  * Created by nima on 7/14/2017.
  */
@@ -20,10 +18,6 @@ public class LinkCreator {
     private boolean autoIncPos=true;
 
 
-    public void setAutoIncPos(boolean auto){autoIncPos=auto;}
-    public boolean getAutoIncPos(){return autoIncPos;}
-
-
     public LinkCreator(String Singer, String quality, String provider, int SuraNumber) {
 
         this.provider = provider;
@@ -37,7 +31,6 @@ public class LinkCreator {
                 SuraNumberS = "0" + SuraNumber;
         } else SuraNumberS = SuraNumber + "";
     }
-
     public LinkCreator(String Singer, String quality, int SuraNumber) {
         this.singer = Singer;
         this.quality = quality;
@@ -51,6 +44,14 @@ public class LinkCreator {
 
 
 
+    }
+
+    public boolean getAutoIncPos() {
+        return autoIncPos;
+    }
+
+    public void setAutoIncPos(boolean auto) {
+        autoIncPos = auto;
     }
 
     public int getCurrentPos() {
@@ -87,7 +88,7 @@ public class LinkCreator {
         StringBuilder link =new StringBuilder("http://www.everyayah.com/data/");
 
         link .append (singer + "_" + quality);
-        if (provider != null)
+        if (provider != null && !provider.isEmpty())
             link .append("_"+provider);
         link.append("/"+fileNamer());
         if(autoIncPos)
