@@ -12,6 +12,7 @@ public class Singer {
     private String provider;
     private String[] Quality;
     private String progrss;
+    private int downloaded = 0;
 
     public Singer(String singer, String provider, JSONArray quality) throws JSONException {
         this.singer = singer;
@@ -57,6 +58,10 @@ public class Singer {
         return Quality;
     }
 
+    public void setQuality(String[] quality) {
+        Quality = quality;
+    }
+
     public void setQuality(JSONArray quality) {
         Quality = new String[quality.length()];
         for (int i = 0; i < quality.length(); i++) {
@@ -74,10 +79,6 @@ public class Singer {
         this.Quality[0] = quality;
     }
 
-    public void setQuality(String[] quality) {
-        Quality = quality;
-    }
-
     public String getProgrss() {
         return progrss;
     }
@@ -90,5 +91,13 @@ public class Singer {
         this.progrss = a + "/" + b;
 
 
+    }
+
+    public int getDownloaded() {
+        return downloaded;
+    }
+
+    public void setDownloaded(int downloaded) {
+        this.downloaded = downloaded;
     }
 }

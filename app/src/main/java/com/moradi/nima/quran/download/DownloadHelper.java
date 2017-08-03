@@ -17,12 +17,20 @@ import java.io.File;
 
 public class DownloadHelper implements CallBack {
     protected Context context;
-    protected DownloadConfiguration configuration;
-    protected File path;
-    protected LinkCreator linky;
-    protected int suralenght;
     protected int Downloaded = 0;
-    String savePath;
+    private DownloadConfiguration configuration;
+    private File path;
+    private LinkCreator linky;
+    private int suralenght;
+    private String savePath;
+
+    public DownloadHelper(Context context) {
+        this.context = context;
+        configuration = new DownloadConfiguration();
+        configuration.setMaxThreadNum(10);
+        configuration.setThreadNum(3);
+
+    }
 
     public DownloadHelper(String savePath, Context context, int suranumber, String singer,
                           String qualty, @Nullable String provider, int SuraLenght) {
@@ -37,6 +45,18 @@ public class DownloadHelper implements CallBack {
         configuration.setMaxThreadNum(10);
         configuration.setThreadNum(3);
         linky.setAutoIncPos(false);
+        this.savePath = savePath.substring(savePath.indexOf('/'));
+        this.savePath = this.savePath.substring(this.savePath.indexOf('/'));
+
+    }
+
+    public void setLinky(@Nullable String provider, String singer, int suranumber, String qualty) {
+
+        linky = new LinkCreator(singer, qualty, provider, suranumber);
+    }
+
+    public void setSavePath(String savePath) {
+        path = new File(android.os.Environment.getExternalStorageDirectory() + "/" + savePath);
         this.savePath = savePath.substring(savePath.indexOf('/'));
         this.savePath = this.savePath.substring(this.savePath.indexOf('/'));
 
@@ -132,7 +152,9 @@ public class DownloadHelper implements CallBack {
         return context;
     }
 
-    /** return number of download file with downloading*/
+    /**
+     * return number of download file with downloading
+     */
     public void addToDownload() {
         DownloadRequest request = new DownloadRequest();
         if (!request.isAvailableViaLink(linky.getLink()))

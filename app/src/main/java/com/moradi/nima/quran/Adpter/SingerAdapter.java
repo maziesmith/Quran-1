@@ -3,6 +3,7 @@ package com.moradi.nima.quran.Adpter;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.aspsine.multithreaddownload.DownloadException;
 import com.moradi.nima.quran.R;
 import com.moradi.nima.quran.download.DownloadHelper;
 
@@ -22,7 +24,8 @@ import java.util.List;
  * Created by nima on 7/26/2017.
  */
 
-public class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHolder> {
+public abstract class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHolder> {
+    downloadWithPro helper;
     private Context context;
     private List<Singer> SingerList;
     private int suraLen, suraId;
@@ -36,6 +39,8 @@ public class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHold
         this.recyclerView = recyclerView;
     }
 
+    public abstract void OnBackSupport(Singer singer);
+
     @Override
     public MyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -47,6 +52,7 @@ public class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         final Singer singer = SingerList.get(position);
+        Log.i(this + "download", position + "");
         holder.name.setText(singer.getSinger());
         holder.progressNum.setText(singer.getProgrss());
         holder.progressNum.setText(singer.getProgrss());
@@ -58,27 +64,34 @@ public class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHold
             rad.setId(i);
             holder.quality.addView(rad);
         }
+        Log.i(this + "download", "Quarn/audio/" + singer.getSinger() + "/" + ((RadioButton) holder.download.getRootView()
+                .findViewById(holder.quality.getCheckedRadioButtonId())).getText().toString());
 
-        holder.download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                recyclerView.stopScroll();
-
-                holder.quality.getCheckedRadioButtonId();
-
-                downloadWithPro helper = new downloadWithPro(holder,
-                        "Quarn/audio/" + singer.getSinger() + "/" + ((RadioButton) v.getRootView().findViewById(holder.quality.getCheckedRadioButtonId())).getText().toString()
-                        , getContext(),
-                        suraId
-                        , holder.name.getText().toString()
-                        , ((RadioButton) v.getRootView().findViewById(holder.quality.getCheckedRadioButtonId())).getText().toString()
-                        , singer.getProvider()
-                        , suraLen);
+        helper = new downloadWithPro(holder,
+                "Quarn/audio/" + singer.getSinger() + "/" + ((RadioButton) holder.download.getRootView().findViewById(holder.quality.getCheckedRadioButtonId())).getText().toString()
+                , getContext(),
+                suraId
+                , holder.name.getText().toString()
+                , ((RadioButton) holder.download.getRootView().findViewById(holder.quality.getCheckedRadioButtonId())).getText().toString()
+                , singer.getProvider()
+                , suraLen);
 
 
-                helper.addToDownload();
-            }
-        });//Abdul_Basit_Murattal_192kbps_/093001.mp3
+//
+//        holder.download.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                recyclerView.stopScroll();
+//                helper.addToDownload();
+//
+//            }
+//        });//Abdul_Basit_Murattal_192kbps_/093001.mp3
+        int availableTo = helper.availableTo();
+        float i = (float) availableTo / suraLen * 100;
+
+        holder.progressNum.setText(availableTo + "/" + suraLen);
+        holder.progressBar.setProgress((int) i);
+        OnBackSupport(singer);
 
 
     }
@@ -101,26 +114,34 @@ public class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHold
 
         }
 
-        @Override
+        public downloadWithPro(Context context, MyViewHolder holder) {
+            super(context);
+            this.holder = holder;
+        }
 
+        @Override
         public void onCompleted() {
             super.onCompleted();
-            float i = (float) super.Downloaded / super.suralenght * 100;
+            float i = (float) super.Downloaded / suraLen * 100;
+
+            holder.progressNum.setText(super.Downloaded + "/" + suraLen);
             holder.progressBar.setProgress((int) i);
-            holder.progressNum.setText(super.Downloaded + "/" + super.suralenght);
-
-
         }
 
         @Override
-        public void getDownloaded(int d) {
-            float i = (float) super.Downloaded / super.suralenght * 100;
-            holder.progressBar.setProgress((int) i);
-            holder.progressNum.setText(super.Downloaded + "/" + super.suralenght);
-
+        public void onStarted() {
+            super.onStarted();
+            holder.download.setVisibility(View.GONE);
+            holder.cancel.setVisibility(View.VISIBLE);
         }
 
+        @Override
+        public void onFailed(DownloadException e) {
+            super.onFailed(e);
+            holder.download.setVisibility(View.VISIBLE);
+            holder.cancel.setVisibility(View.GONE);
 
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -139,6 +160,27 @@ public class SingerAdapter extends RecyclerView.Adapter<SingerAdapter.MyViewHold
             progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
             download = (Button) view.findViewById(R.id.downloadButt);
             cancel = (Button) view.findViewById(R.id.cancel);
+            download.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    helper = new downloadWithPro(MyViewHolder.this,
+                            "Quarn/audio/" + name.getText() + "/" + ((RadioButton) download.getRootView().findViewById(quality.getCheckedRadioButtonId())).getText().toString()
+                            , getContext(),
+                            suraId
+                            , name.getText().toString()
+                            , ((RadioButton) download.getRootView().findViewById(quality.getCheckedRadioButtonId())).getText().toString()
+                            , SingerList.get(getLayoutPosition()).getProvider()
+                            , suraLen);
+
+                    int availableTo = helper.availableTo();
+                    float i = (float) availableTo / suraLen * 100;
+                    progressNum.setText(availableTo + "/" + suraLen);
+                    progressBar.setProgress((int) i);
+                    helper.addToDownload();
+                }
+            });
+
+
         }
 
     }

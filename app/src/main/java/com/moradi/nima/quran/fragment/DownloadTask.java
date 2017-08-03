@@ -2,6 +2,7 @@ package com.moradi.nima.quran.fragment;
 
 
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -33,7 +34,7 @@ public class DownloadTask extends AppCompatActivity {
     private List<com.moradi.nima.quran.Adpter.Singer> SingerList = new ArrayList<>();
     private RecyclerView recyclerView;
     private SingerAdapter mAdapter;
-
+    private Singer sing;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +44,14 @@ public class DownloadTask extends AppCompatActivity {
         int suraId = Integer.parseInt(getIntent().getExtras().getString(this.getString(R.string.SuraID)));
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        Log.i(this + " SuraLength: ", SuraLength);
+        Log.i(this + " SuraLength:", SuraLength);
 
-        mAdapter = new SingerAdapter(SingerList, this, Integer.parseInt(SuraLength), suraId, recyclerView);
+        mAdapter = new SingerAdapter(SingerList, this, Integer.parseInt(SuraLength), suraId, recyclerView) {
+            @Override
+            public void OnBackSupport(Singer singer) {
+                sing = singer;
+            }
+        };
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         SnapHelper snapHelper = new PagerSnapHelper();
@@ -62,6 +68,19 @@ public class DownloadTask extends AppCompatActivity {
 
     }
 
+
+    //to return data
+    @Override
+    public void onBackPressed() {
+
+        Intent data = new Intent();
+        data.putExtra("SingerName", sing.getSinger());
+        data.putExtra("Quality", sing.getQuality()[0]);
+        setResult(RESULT_OK, data);
+        super.onBackPressed();
+//---close the activity---
+
+    }
 
     private String loadJSONFromAsset(String file) {
         String json = null;
